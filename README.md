@@ -1,6 +1,6 @@
 # Order Application GUI
 
-This is my very first GUI application.
+This is my very first GUI application. (Work in progress)
 
 
 It is created using Python Tkinter module and it should be able to create a printable order list using the 
