@@ -28,4 +28,4 @@ Current Bugs:
 
 -The order display area can be modified after the data is displayed (must be Read-Only)
 
-- If the fields exceeds 200 qty the Bill area data will be displayed incorectly (Create a limit of 200 or Change how the data  is displayed)
+-If the fields exceeds 200 qty the Bill area data will be displayed incorectly (Create a limit of 200 or Change how the data  is displayed)
