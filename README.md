@@ -12,3 +12,20 @@ Feel free to leave a comment, mentioning what should I change about the way the 
 readable and clear to understand.
 
 Thank you! :D
+
+
+Update 1.2 : 
+
+-Added Total Amount Entry field that shows the total order 
+
+-Now the Bill buton will display the order on the right panel(  name, quantity, total)
+
+-Check button wil show the Total Amount
+
+-Error message will be generated if the fields are empty
+
+Current Bugs:
+
+-The order display area can be modified after the data is displayed (must be Read-Only)
+
+- If the fields exceeds 200 qty the Bill area data will be displayed incorectly (Create a limit of 200 or Change how the data  is displayed)
