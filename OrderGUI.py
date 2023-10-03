@@ -1,3 +1,4 @@
+from random import randint as rd
 import tkinter as tk
 from tkinter import messagebox
 
@@ -39,9 +40,12 @@ def Check():
       _checkout["state"] = "disabled"
 
 
-#
-def Bill():   
+
+def Bill():
+    Check()
     
+    _order_number = rd(1,10)
+
     if _checkout.get() == '0.00 RON' or _checkout.get() == '':
         messagebox.showerror("Error","Missing Order!")
 
@@ -52,13 +56,17 @@ def Bill():
             _data_display["state"] = "normal"    
 
             _data_display.delete("1.0", tk.END)
-            _data_display.insert(tk.END,"\n\t**Welcome Customer**\n")
+            _data_display.insert(tk.END,"\n\t**Welcome Customer**\n\n")
+            _data_display.insert(tk.END, f"Name: {_field_name.get()}       Order:{_order_number}\n")
+            _data_display.insert(tk.END, f"Last Name: {_field_last_name.get()}\n")
+            _data_display.insert(tk.END, f"Phone: {_field_phone.get()}\n\n")
+            _data_display.insert(tk.END, f"Addres: {_field_addres.get()}\n\n")
             _data_display.insert(tk.END, "===================================\n")
             _data_display.insert(tk.END, f"Item       Quantity        Price\n")
             _data_display.insert(tk.END, "===================================\n")
 
             
-            if int(_field_nails.get()) > 200 and len(_field_nails.get()) == 3:
+            if int(_field_nails.get()) > 200:
                messagebox.showerror("Field Error","Maxmium of 200 Nails exceded!")
             else:
                if _field_nails.get()!= "0":
@@ -66,7 +74,7 @@ def Bill():
                 _data_display.insert(tk.END, f"Nails\t\t{_field_nails.get()}\t    {_decimal_nails}\n")
 
 
-            if int(_field_planks.get()) > 200 and len(_field_planks.get()) == 3:
+            if int(_field_planks.get()) > 200:
                messagebox.showerror("Field Error","Maxmium of 200 Planks exceded!")
             else:
                if _field_planks.get()!= "0":
@@ -74,7 +82,7 @@ def Bill():
                 _data_display.insert(tk.END, f"Planks\t\t{_field_planks.get()}\t    {_decimal_planks}\n")
 
 
-            if int(_field_bricks.get()) > 200 and len(_field_bricks.get()) == 3:
+            if int(_field_bricks.get()) > 200:
                messagebox.showerror("Field Error","Maxmium of 200 Bricks exceded!")
             else:
                if _field_bricks.get()!= "0":
@@ -82,7 +90,7 @@ def Bill():
                 _data_display.insert(tk.END, f"Bricks\t\t{_field_bricks.get()}\t    {_decimal_bricks}\n")
 
 
-            if int(_field_rope.get()) > 200 and len(_field_rope.get()) == 3:
+            if int(_field_rope.get()) > 200:
                messagebox.showerror("Field Error","Maxmium of 200 Rope exceded!")
             else:
                if _field_rope.get()!= "0":
@@ -90,7 +98,7 @@ def Bill():
                 _data_display.insert(tk.END, f"Rope\t\t{_field_rope.get()}\t    {_decimal_rope}\n")
 
 
-            if int(_field_cable.get()) > 200 and len(_field_cable.get()) == 3:
+            if int(_field_cable.get()) > 200:
                messagebox.showerror("Field Error","Maxmium of 200 Cable exceded!")
             else:
                if _field_cable.get()!= "0":
@@ -98,7 +106,7 @@ def Bill():
                 _data_display.insert(tk.END, f"Cable\t\t{_field_cable.get()}\t    {_decimal_cable}\n")
 
 
-            if int(_field_cement.get()) > 200 and len(_field_cement.get()) == 3:
+            if int(_field_cement.get()) > 200:
                messagebox.showerror("Field Error","Maxmium of 200 Cement exceded!")
             else:
                if _field_cement.get()!= "0":
@@ -106,7 +114,7 @@ def Bill():
                 _data_display.insert(tk.END, f"Cement\t\t{_field_cement.get()}\t    {_decimal_cement}\n")
 
 
-            if int(_field_bolts.get()) > 200 and len(_field_bolts.get()) == 3:
+            if int(_field_bolts.get()) > 200:
                messagebox.showerror("Field Error","Maxmium of 200 Bolts exceded!")
             else:
                if _field_bolts.get()!= "0":
@@ -114,7 +122,7 @@ def Bill():
                 _data_display.insert(tk.END, f"Bolts\t\t{_field_bolts.get()}\t    {_decimal_bolts}\n")
 
 
-            if int(_field_cola.get()) > 200 and len(_field_cola.get()) == 3:
+            if int(_field_cola.get()) > 200:
                messagebox.showerror("Field Error","Maxmium of 200 Coca-Cola exceded!")
             else:
                if _field_cola.get()!= "0":
@@ -122,7 +130,7 @@ def Bill():
                 _data_display.insert(tk.END, f"Coca-Cola\t\t{_field_cola.get()}\t    {_decimal_cola}\n")
 
 
-            if int(_field_pepsi.get()) > 200 and len(_field_pepsi.get()) == 3:
+            if int(_field_pepsi.get()) > 200:
                messagebox.showerror("Field Error","Maxmium of 200 Pepsi exceded!")
             else:
                if _field_pepsi.get()!= "0":
@@ -130,7 +138,7 @@ def Bill():
                 _data_display.insert(tk.END, f"Pepsi\t\t{_field_pepsi.get()}\t    {_decimal_pepsi}\n")
 
 
-            if int(_field_fanta.get()) > 200 and len(_field_fanta.get()) == 3:
+            if int(_field_fanta.get()) > 200:
                messagebox.showerror("Field Error","Maxmium of 200 Fanta exceded!")
             else:
                if _field_fanta.get()!= "0":
@@ -138,7 +146,7 @@ def Bill():
                 _data_display.insert(tk.END, f"Fanta\t\t{_field_fanta.get()}\t    {_decimal_fanta}\n")
 
 
-            if int(_field_dew.get()) > 200 and len(_field_dew.get()) == 3:
+            if int(_field_dew.get()) > 200:
                messagebox.showerror("Field Error","Maxmium of 200 Mountain DEW exceded!")
             else:
                if _field_dew.get()!= "0":
@@ -146,7 +154,7 @@ def Bill():
                 _data_display.insert(tk.END, f"DEW\t\t{_field_dew.get()}\t    {_decimal_dew}\n")
 
 
-            if int(_field_water.get()) > 200 and len(_field_water.get()) == 3:
+            if int(_field_water.get()) > 200:
                messagebox.showerror("Field Error","Maxmium of 200 Water exceded!")
             else:
                if _field_water.get()!= "0":
@@ -192,12 +200,12 @@ def Bill():
 """_______Window_Settings_____________""" 
 
 window = tk.Tk()
-window.geometry("800x430")
+window.geometry("800x500")
 window.configure(background="Grey")
 window.resizable(False, False)
 window.title("Order Register")
 _message = tk.Label(window, text="Fill the bellow fields to complete the order: ", bg="Grey")
-_message.place(y=15 ,x=20)
+_message.place(y=10 ,x=15)
 
 """___________________________________""" 
 
@@ -207,6 +215,54 @@ _message.place(y=15 ,x=20)
 
 
 """_______Data_Required_for_Order_Completion___________"""  
+
+
+
+"""_______Client_Data__________"""  
+
+"""___Client_Frame___"""
+_client_frame = tk.Frame(window,bg="Grey",borderwidth=2)
+_client_frame.columnconfigure(0, weight="1") #Name
+_client_frame.columnconfigure(1, weight="1")
+_client_frame.columnconfigure(2, weight="1") #Last Name
+_client_frame.columnconfigure(3, weight="1")
+_client_frame.columnconfigure(4, weight="1") #Phone
+_client_frame.columnconfigure(5, weight="1")
+_client_frame.place(x=15 ,y=40)
+
+ #Name
+_label_name = tk.Label(_client_frame, bg="Grey", fg="Orange", text="Name")
+_label_name.grid(row=0, column=0)
+_field_name = tk.Entry(_client_frame, width=20)
+_field_name.grid(row=0 ,column=1, padx=20)
+
+ #Last Name
+_label_last_name = tk.Label(_client_frame, bg="Grey", fg="Orange", text="Last Name")
+_label_last_name.grid(row=0, column=2)
+_field_last_name = tk.Entry(_client_frame, width=20)
+_field_last_name.grid(row=0 ,column=3, padx=20)
+
+ #Phone
+_label_phone = tk.Label(_client_frame, bg="Grey", fg="Orange", text="Phone")
+_label_phone.grid(row=0, column=4)
+_field_phone = tk.Entry(_client_frame, width=20)
+_field_phone.grid(row=0 ,column=5, padx=20)
+
+
+"___Addres_Frame___"
+_client_addres_frame = tk.Frame(window, bg="Grey")
+_client_frame.columnconfigure(0, weight="1")
+_client_addres_frame.place(x=15 ,y=60)
+
+#Addres
+
+_label_addres = tk.Label(_client_addres_frame, bg="Grey", fg="Orange", text="Addres")
+_label_addres.grid(row=1, column=0)
+_field_addres = tk.Entry(_client_addres_frame, width=65)
+_field_addres.grid(row=1, column=1, pady= 25)
+
+"""______End_of_Client_Data_________"""  
+
 
 
 _data_frame = tk.Frame(window, bg="Grey")
@@ -321,12 +377,7 @@ _field_water.insert(0, 0)
 
 """_______"""
 
-
-
-
-
-
-_data_frame.place(x=10 , y=53)
+_data_frame.place(x=10 , y=120)
 
 """_____End_of_Data_Required_for_Order_Completion_____"""  
 
@@ -336,7 +387,7 @@ _data_frame.place(x=10 , y=53)
 
 """______additional_details________"""
 
-_additional_details = tk.Frame(window,background="Grey",highlightbackground="Black", highlightthickness=3, pady=5)
+_additional_details = tk.Frame(window,background="Grey", pady=5)
 _additional_details.columnconfigure(0, weight="1")
 _additional_details.columnconfigure(1, weight="1")
 _additional_details.columnconfigure(2, weight="1")
@@ -365,7 +416,7 @@ tracker_value = tk.BooleanVar()
 _additional_tracker_box = tk.Checkbutton(_additional_details, variable=tracker_value, text="Tracker", onvalue=1, offvalue=0)
 _additional_tracker_box.grid(row=0, column=4)
 
-_additional_details.place(anchor="w", x=10, y=378)
+_additional_details.place(anchor="w", x=10, y=450)
 
 """_____End_of_additional_details________"""
 
@@ -397,7 +448,7 @@ _display_frame = tk.Frame(window,bg="Grey", background="Grey",borderwidth=2)
 _display_frame.columnconfigure(0, weight="1")
 _data_display = tk.Text(_display_frame, bd=4, state= "disabled", foreground="Black", height=21, width=35)
 _data_display.grid(row=0 ,column=0)
-_display_frame.place(x=463 ,y=53)
+_display_frame.place(x=465 ,y=100)
 
 
 """______________________________________"""
@@ -409,9 +460,9 @@ _display_frame.place(x=463 ,y=53)
 """_____Total_Checkout______________"""
 
 _checkout = tk.Entry(window, state="disabled", width=14)
-_checkout.place(x=260 ,y=325)
+_checkout.place(x=280 ,y=385)
 _checkout_label = tk.Label(window, text="Total Amount", fg="Orange",bg="Grey", font=("Calibri", 13))
-_checkout_label.place(x=160 ,y=318)
+_checkout_label.place(x=180 ,y=380)
 
 """_________________________________"""
 
